@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ফটো আর্কাইভ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="filmstrip" aria-hidden="true"></div>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="hero-top">
+      <h1>ফটো আর্কাইভ</h1>
+      <span class="roll-tag">ROLL №01</span>
+    </div>
+    <p class="tagline">তোমার প্রিয় মুহূর্তগুলো নিরাপদে জমা থাকুক</p>
+  </header>
+
+  <section class="upload-zone" id="dropzone" tabindex="0" role="button" aria-label="ছবি আপলোড করো">
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    <div class="upload-icon">⤓</div>
+    <p class="upload-text">ছবি টেনে এনে ছাড়ো, অথবা ক্লিক করে বেছে নাও</p>
+    <p class="upload-hint">JPG · PNG · WEBP · GIF — সর্বোচ্চ ৪ এমবি</p>
+  </section>
+
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+
+  <section class="sheet">
+    <div class="sheet-label">
+      <span>সংরক্ষিত ফ্রেম</span>
+      <span class="sheet-count"><span id="count">0</span>টি</span>
+    </div>
+
+    <p class="empty" id="empty">এখনো কোনো ছবি নেই। প্রথম ছবিটা আপলোড করো।</p>
+
+    <div class="grid" id="grid" hidden></div>
+  </section>
+</main>
+
+<div class="filmstrip" aria-hidden="true"></div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-backdrop" data-close></div>
+  <div class="lightbox-panel">
+    <button class="lightbox-close" data-close aria-label="বন্ধ করো">✕</button>
+    <div class="lightbox-frame">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+    <p class="lightbox-filename" id="lightboxFilename"></p>
+    <p class="lightbox-meta" id="lightboxMeta"></p>
+    <div class="lightbox-actions">
+      <a class="btn btn-ghost" id="lightboxDownload" download>ডাউনলোড</a>
+      <button class="btn btn-danger" id="lightboxDelete">মুছে ফেলো</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
