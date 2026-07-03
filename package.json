@@ -1,0 +1,9 @@
+{
+  "name": "photo-archive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify Blobs দিয়ে বানানো ফটো সংরক্ষণ ওয়েবসাইট",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.0"
+  }
+}
